@@ -112,7 +112,8 @@ function testDataProviders(): array
             ],
             [
                 'name' => 'Test',
-                'httpStatus' => 201,
+                'httpStatusCode' => 201,
+                'httpStatus' => 'Created',
             ],
             201,
             200,
@@ -127,7 +128,8 @@ function testDataProviders(): array
             [],
             [
                 // [], //It won't be included
-                'httpStatus' => 204,
+                'httpStatusCode' => 204,
+                'httpStatus' => 'No Content',
             ],
             204,
             200,
@@ -141,11 +143,12 @@ function testDataProviders(): array
                 '50x' => false,
             ],
             [
-                'message' => 'Bad Request',
+                'message' => 'Test Message',
             ],
             [
-                'message' => 'Bad Request',
-                'httpStatus' => 400,
+                'message' => 'Test Message',
+                'httpStatusCode' => 400,
+                'httpStatus' => 'Bad Request',
             ],
             400,
             200,
@@ -158,11 +161,12 @@ function testDataProviders(): array
                 '50x' => false,
             ],
             [
-                'message' => 'Unauthorized',
+                'message' => 'Test Message',
             ],
             [
-                'message' => 'Unauthorized',
-                'httpStatus' => 401,
+                'message' => 'Test Message',
+                'httpStatusCode' => 401,
+                'httpStatus' => 'Unauthorized',
             ],
             401,
             200,
@@ -175,11 +179,12 @@ function testDataProviders(): array
                 '50x' => false,
             ],
             [
-                'message' => 'Forbidden',
+                'message' => 'Test Message',
             ],
             [
-                'message' => 'Forbidden',
-                'httpStatus' => 403,
+                'message' => 'Test Message',
+                'httpStatusCode' => 403,
+                'httpStatus' => 'Forbidden',
             ],
             403,
             200,
@@ -192,11 +197,12 @@ function testDataProviders(): array
                 '50x' => false,
             ],
             [
-                'message' => 'Not Found',
+                'message' => 'Test Message',
             ],
             [
-                'message' => 'Not Found',
-                'httpStatus' => 404,
+                'message' => 'Test Message',
+                'httpStatusCode' => 404,
+                'httpStatus' => 'Not Found',
             ],
             404,
             200,
@@ -217,7 +223,8 @@ function testDataProviders(): array
                 'errors' => [
                     'name' => 'The name field is required.',
                 ],
-                'httpStatus' => 422,
+                'httpStatusCode' => 422,
+                'httpStatus' => 'Unprocessable Content',
             ],
             422,
             200,
@@ -231,11 +238,12 @@ function testDataProviders(): array
                 '50x' => true,
             ],
             [
-                'message' => 'Internal Server Error',
+                'message' => 'Test Message',
             ],
             [
-                'message' => 'Internal Server Error',
-                'httpStatus' => 500,
+                'message' => 'Test Message',
+                'httpStatusCode' => 500,
+                'httpStatus' => 'Internal Server Error',
             ],
             500,
             200,
@@ -248,11 +256,12 @@ function testDataProviders(): array
                 '50x' => true,
             ],
             [
-                'message' => 'Bad Gateway',
+                'message' => 'Test Message',
             ],
             [
-                'message' => 'Bad Gateway',
-                'httpStatus' => 502,
+                'message' => 'Test Message',
+                'httpStatusCode' => 502,
+                'httpStatus' => 'Bad Gateway',
             ],
             502,
             200,
@@ -265,11 +274,12 @@ function testDataProviders(): array
                 '50x' => true,
             ],
             [
-                'message' => 'Service Unavailable',
+                'message' => 'Test Message',
             ],
             [
-                'message' => 'Service Unavailable',
-                'httpStatus' => 503,
+                'message' => 'Test Message',
+                'httpStatusCode' => 503,
+                'httpStatus' => 'Service Unavailable',
             ],
             503,
             200,
@@ -282,13 +292,91 @@ function testDataProviders(): array
                 '50x' => true,
             ],
             [
-                'message' => 'Gateway Timeout',
+                'message' => 'Test Message',
             ],
             [
-                'message' => 'Gateway Timeout',
-                'httpStatus' => 504,
+                'message' => 'Test Message',
+                'httpStatusCode' => 504,
+                'httpStatus' => 'Gateway Timeout',
             ],
             504,
+            200,
+        ],
+        /*
+         * =============================================================================================================
+         * unkown Status
+         * =============================================================================================================
+         */
+        'unkown 299' => [
+            [
+                '20x' => true,
+                '30x' => false,
+                '40x' => false,
+                '50x' => false,
+            ],
+            [
+                'message' => 'Test Message',
+            ],
+            [
+                'message' => 'Test Message',
+                'httpStatusCode' => 299,
+                'httpStatus' => 'Unknown Status',
+            ],
+            299,
+            200,
+        ],
+        'unkown 399' => [
+            [
+                '20x' => false,
+                '30x' => true,
+                '40x' => false,
+                '50x' => false,
+            ],
+            [
+                'message' => 'Test Message',
+            ],
+            [
+                'message' => 'Test Message',
+                'httpStatusCode' => 399,
+                'httpStatus' => 'Unknown Status',
+            ],
+            399,
+            200,
+        ],
+        'unkown 499' => [
+            [
+                '20x' => false,
+                '30x' => false,
+                '40x' => true,
+                '50x' => false,
+            ],
+            [
+                'message' => 'Test Message',
+            ],
+            [
+                'message' => 'Test Message',
+                'httpStatusCode' => 499,
+                'httpStatus' => 'Unknown Status',
+            ],
+            499,
+            200,
+        ],
+        'unkown 599' => [
+            [
+                '20x' => false,
+                '30x' => false,
+                '40x' => false,
+                '50x' => true,
+            ],
+            [
+                'message' => 'Test Message',
+            ],
+            [
+                'message' => 'Test Message',
+                'httpStatusCode' => 599,
+                'httpStatus' => 'Unknown Status',
+            ],
+            599,
             200,
         ],
     ];
