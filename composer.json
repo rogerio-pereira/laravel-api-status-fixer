@@ -1,0 +1,40 @@
+{
+    "name": "rogerio-pereira/api-status-fixer",
+    "description": "This package converts 40x and 50x status codes in 200, and include HttpStatus and HttpMessage in response",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rogerio Pereira",
+            "email": "hi@rogeriopereira.dev"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "RogerioPereira\\ApiStatusFixer\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^10"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.36",
+        "orchestra/testbench": "^8.30",
+        "mockery/mockery": "^1.6",
+        "phpunit/phpunit": "^10.5",
+        "laravel/pint": "^1.18"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RogerioPereira\\ApiStatusFixer\\ServiceProvider"
+            ]
+        }
+    }
+}
