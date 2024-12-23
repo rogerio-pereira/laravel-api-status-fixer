@@ -7,4 +7,7 @@ return [
         '40x' => true,
         '50x' => true,
     ],
+
+    // Middleware alias (customizable by the user)
+    'middleware_alias' => env('API_STATUS_FIXER_ALIAS', 'api-status-fixer'),
 ];
