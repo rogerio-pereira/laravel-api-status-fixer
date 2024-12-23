@@ -11,8 +11,10 @@
 |
 */
 
-uses(Tests\TestCase::class)->in('Feature');
-uses(Tests\TestCase::class)->in('Unit');
+// uses(Tests\TestCase::class)->in('Feature');
+// uses(Tests\TestCase::class)->in('Unit');
+uses(Orchestra\Testbench\TestCase::class)->in('Feature');
+uses(Orchestra\Testbench\TestCase::class)->in('Unit');
 
 /*
 |--------------------------------------------------------------------------
